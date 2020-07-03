@@ -1,0 +1,98 @@
+//button component
+.btn {
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+
+  &--done{
+    background-color: green;
+  }
+
+  &--increase {
+    background-color: orange;
+  }
+
+  &--delete {
+    background-color: red;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+//table
+.table {
+  $self: &;
+  border-collapse: collapse;
+  width: 100%;
+
+  &__thead {
+    th {
+      padding: 12px 0 12px 8px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+      border: 1px solid #ddd;
+    }
+  }
+
+  &__tbody {
+    tr, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    #{ $self }__pomodoro {
+      background-color: gray;
+      margin-left: 10px;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-size: 12px;
+      color: white;
+    }
+  }
+}
+
+//form
+.my-form {
+  height: 30px;
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__text {
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 0 10px;
+    width: 250px;
+  }
+
+  &__select {
+    margin-right: 10px;
+    background-color: orange;
+    border: 0;
+    padding: 0 10px;
+    border-radius: 5px;
+  }
+
+  &__btn {
+    background-color: green;
+    color: white;
+    border: 0;
+    padding: 0 10px;
+    border-radius: 5px;
+  }
+}
