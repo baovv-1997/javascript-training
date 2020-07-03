@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS DOM paragraph style</title>
-</head>
-<body>
-  <p id ='text'>JavaScript Exercises - w3resource</p>
-  <div>
-    <button id="jsstyle" onclick="js_style()">Style</button>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM paragraph style</title>
+  </head>
+  <body>
+    <p id ='text'>JavaScript Exercises - w3resource</p>
+    <div>
+      <button id="jsstyle" onclick="setStyle()">Style</button>
+    </div>
 
-  <script>
-    function js_style() {
-      text.style.color = 'green';
-      text.style.fontSize = '1.5em';
-      text.style.fontFamily = 'Arial';
-    }
-  </script>
-</body>
+    <script>
+      function setStyle() {
+        text.style.color = 'green';
+        text.style.fontSize = '1.5em';
+        text.style.fontFamily = 'Arial';
+      }
+    </script>
+  </body>
 </html>

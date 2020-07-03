@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get Attributes</title>
-</head>
-<body>
-  <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.w3resource.com/">w3resource</a></p>
-  <button onclick="getAttributes()">Click here to get  attributes value</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Attributes</title>
+  </head>
+  <body>
+    <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.w3resource.com/">w3resource</a></p>
+    <button onclick="getAttributes()">Click here to get  attributes value</button>
 
-  <script>
-    function getAttributes(){
-      let linkTag = document.getElementById('w3r');
-      alert(`The value of href attributes is : ${ linkTag.href}`);
-      alert(`The value of hreflang attributes is : ${ linkTag.hreflang}`);
-      alert(`The value of rel attributes is : ${ linkTag.rel}`);
-      alert(`The value of target attributes is : ${ linkTag.target}`);
-      alert(`The value of type attributes is : ${ linkTag.type}`);
-    }
-  </script>
-</body>
+    <script>
+      function getAttributes(){
+        let linkTag = document.getElementById('w3r');
+        alert(`The value of href attributes is : ${ linkTag.href}`);
+        alert(`The value of hreflang attributes is : ${ linkTag.hreflang}`);
+        alert(`The value of rel attributes is : ${ linkTag.rel}`);
+        alert(`The value of target attributes is : ${ linkTag.target}`);
+        alert(`The value of type attributes is : ${ linkTag.type}`);
+      }
+    </script>
+  </body>
 </html>

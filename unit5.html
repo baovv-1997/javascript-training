@@ -13,10 +13,10 @@
     <td>Row 2 cell 2</td></tr>
   </table>
   <br>
-  <input type="button" onclick="insert_Row()" value="Insert row">
+  <input type="button" onclick="insertRow()" value="Insert row">
 
   <script>
-    function insert_Row(){
+    function insertRow(){
       let myTable = document.getElementById('sampleTable');
       let myRow =  myTable.insertRow(myTable.rows.length);
       let rowIndex = myTable.rows.length;

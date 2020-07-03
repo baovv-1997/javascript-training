@@ -26,7 +26,7 @@ function wrong(element, err) {
   element.style.color = 'red';
 }
 
-function validateEmail(email) {
+function checkValidateEmail(email) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
@@ -48,30 +48,30 @@ function setData() {
   localStorage.setItem('users', JSON.stringify(users));
 }
 
-function duplicateEmail(email) {
+function checkDuplicateEmail(email) {
   let user = users.find(value => value.email == email);
   console.log(user);
   if(user) return true;
   return false;
 }
 
-function checkedName() {
+function checkName() {
   let nameValue = name.value.trim();
   if(nameValue) {
     right(errName);
     isName = true;
-  }else {
+  } else {
     isName = false;
     wrong(errName, 'Please enter the correct format');
   }
 }
 
-function checkedEmail() {
+function checkEmail() {
   let emailValue = email.value.trim();
-  if(duplicateEmail(emailValue)) {
+  if(checkDuplicateEmail(emailValue)) {
     isEmail = false;
     wrong(errEmail, 'Email already exists');
-  }else if(validateEmail(emailValue)) {
+  }else if(checkValidateEmail(emailValue)) {
     right(errEmail);
     isEmail = true;
   }else {
@@ -80,7 +80,7 @@ function checkedEmail() {
   }
 }
 
-function checkedPass() {
+function checkPass() {
   let passValue = pass.value.trim();
   if(passValue.length >= 8 && passValue.length <= 16) {
     right(errPass);
@@ -91,7 +91,7 @@ function checkedPass() {
   }
 }
 
-function checkedConfirm() {
+function checkConfirm() {
   let confirmValue = confirmPass.value.trim();
   if(confirmValue == pass.value.trim()) {
     right(errConfirm);
@@ -131,9 +131,9 @@ function resetForm() {
 }
 
 getData();
-name.addEventListener('input', checkedName);
-email.addEventListener('input', checkedEmail);
-pass.addEventListener('input', checkedPass);
-confirmPass.addEventListener('input', checkedConfirm);
+name.addEventListener('input', checkName);
+email.addEventListener('input', checkEmail);
+pass.addEventListener('input', checkPass);
+confirmPass.addEventListener('input', checkConfirm);
 btnSubmit.addEventListener('click', submitForm);
 btnReset.addEventListener('click', resetForm);
