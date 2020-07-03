@@ -1,0 +1,68 @@
+//button component
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 32px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 2px 3px 5px #777;
+  color: white;
+
+  &-submit {
+    background-color: green;
+  }
+
+  &-reset {
+    background-color: orange;
+  }
+}
+
+//sign up
+.sign-up{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+
+  &__title{
+    text-align: center;
+  }
+
+  &__input{
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    input{
+      grid-column: 1/3;
+      width: 340px;
+      height: 34px;
+      border-radius: 3px;
+      padding: 3px 10px;
+      box-sizing: border-box;
+      border: 1px solid #666;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    span {
+      font-size: 14px;
+      color: red;
+      margin-right: 5px;
+      grid-row: 1;
+      grid-column: 2;
+    }
+  }
+
+  &__submit {
+    display: grid;
+    padding: 0 5px;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+}

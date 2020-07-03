@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="./styles/sign_up.scss">
+</head>
+<body>
+<div class="main">
+  <section class="sign-up">
+    <h3 class="sign-up__title">Sign Up Page</h3>
+    <form class="sign-up__form">
+      <div class="sign-up__input">
+        <label for="name">User Name</label>
+        <input id="name" type="text" placeholder="Enter User Name">
+        <span class="span-name"></span>
+      </div>
+      <div class="sign-up__input">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Enter Email">
+        <span class="span-email"></span>
+      </div>
+      <div class="sign-up__input">
+        <label for="pass">Password</label>
+        <input id="pass" type="password" placeholder="Password from 8 to 16 character">
+        <span class="span-pass"></span>
+      </div>
+      <div class="sign-up__input">
+        <label for="confirm__pass">Confirm Password</label>
+        <input id="confirm__pass" type="password" placeholder="Confirm Password">
+        <span class="span-confirm-pass"></span>
+      </div>
+      <div class="sign-up__submit">
+        <input type="button" class="btn btn-submit" value="SignUp">
+        <input type="button" class="btn btn-reset" value="Reset">
+      </div>
+    </form>
+  </section>
+</div>
+
+<script src="scripts/sign_up.js"></script>
+</body>
+</html>
