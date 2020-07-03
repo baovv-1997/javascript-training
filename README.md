@@ -20,10 +20,10 @@
 ## PLAN
 - [Plan](https://docs.google.com/document/d/1iNqw01Ymg70TW8U7J67UdS4ia3BnHZ0IAIRlUblV8HI/edit?usp=sharing)
 ## GUIDELINE
-- Clone project: `git clone https://github.com/baovv-1997/html-css-training.git`
-- Open html-css-training folder: `cd html-css-training`
-- Checkout to feature/practice-two branch: `git checkout javascript-training`
-- Open practice-two folder: `cd javascript-training`
+- Clone project: `git clone https://github.com/baovv-1997/javascript-training.git`
+- Open javascript-training folder: `cd practice`
+- Checkout to practice branch: `git checkout practice`
+- Open practice folder: `cd practice`
 - Install dependencies: `npm install`
 - Start parcel bundler: `parcel + file name`
 - Open url `http://localhost:1234` in your browser
