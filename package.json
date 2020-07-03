@@ -1,0 +1,22 @@
+{
+  "name": "javascript-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baovv-1997/html-css-training.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baovv-1997/html-css-training/issues"
+  },
+  "homepage": "https://github.com/baovv-1997/html-css-training#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
