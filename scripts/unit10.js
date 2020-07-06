@@ -1,6 +1,6 @@
 let button = document.getElementsById('button');
 
-function volumeSphere(e){
+function calculateVolumeSphere(e){
   let radius = document.getElementById('radius').value;
   radius = Math.abs(radius);
   let volume = (4/3) * Math.PI * Math.pow(radius, 3);
@@ -8,4 +8,4 @@ function volumeSphere(e){
   document.getElementById('volume').value = volume;
 }
 
-button.addEventListener('click', volumeSphere());
+button.addEventListener('click', calculateVolumeSphere());

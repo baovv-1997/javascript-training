@@ -32,10 +32,11 @@ function checkValidateEmail(email) {
 }
 
 function getData() {
-  users = JSON.parse(localStorage.getItem('users'));
+  let users = JSON.parse(localStorage.getItem('users'));
   if(!users){
-    users = [];
+    return [];
   }
+  return users;
 }
 
 function setData() {
@@ -68,15 +69,19 @@ function checkName() {
 
 function checkEmail() {
   let emailValue = email.value.trim();
-  if(checkDuplicateEmail(emailValue)) {
-    isEmail = false;
+  const isDuplicated = checkDuplicateEmail(emailValue);
+  const isValid = checkValidateEmail(emailValue)
+  isEmail = !isDuplicated && isValid;
+  if(isDuplicated) {
     wrong(errEmail, 'Email already exists');
-  }else if(checkValidateEmail(emailValue)) {
-    right(errEmail);
-    isEmail = true;
-  }else {
-    isEmail = false;
+  }
+
+  if(!isValid) {
     wrong(errEmail, 'Please enter the correct format');
+  }
+
+  if(isEmail) {
+    right(errEmail);
   }
 }
 
@@ -85,7 +90,7 @@ function checkPass() {
   if(passValue.length >= 8 && passValue.length <= 16) {
     right(errPass);
     isPass = true;
-  }else {
+  } else {
     isPass = false;
     wrong(errPass, 'Please enter the correct format');
   }
@@ -93,10 +98,10 @@ function checkPass() {
 
 function checkConfirm() {
   let confirmValue = confirmPass.value.trim();
-  if(confirmValue == pass.value.trim()) {
+  if(confirmValue === pass.value.trim()) {
     right(errConfirm);
     isConfirm = true;
-  }else {
+  } else {
     isConfirm = false;
     wrong(errConfirm, 'Please enter the correct format');
   }
@@ -107,7 +112,7 @@ function submitForm() {
     setData();
     alert('You sign up successfully');
     resetForm();
-  }else {
+  } else {
     if(!isName) wrong(errName, 'Please enter the correct format');
     if(!isEmail) wrong(errEmail, 'Please enter the correct format');
     if(!isPass) wrong(errPass, 'Please enter the correct format');
@@ -130,7 +135,7 @@ function resetForm() {
   isConfirm = false;
 }
 
-getData();
+users = getData();
 name.addEventListener('input', checkName);
 email.addEventListener('input', checkEmail);
 pass.addEventListener('input', checkPass);

@@ -10,7 +10,8 @@ const books = [
     img: 'http://ecx.images-amazon.com/images/I/41Z56GwEv9L._AA115_.jpg',
     author: 'Brian Christian',
     alreadyRead: true
-  }];
+  }
+];
 
 let listBook = document.createElement('ul');
 document.body.appendChild(listBook);

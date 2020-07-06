@@ -1,36 +1,35 @@
-let listTask;
+let listTasks;
 let myForm = document.querySelector('.my-form');
 let tbody = document.querySelector('.table__tbody');
 let addTaskButton = document.querySelector('.my-form__btn');
 
 function remove(array, element) {
-  console.log(element);
   const index = array.indexOf(element);
   array.splice(index, 1);
   setData();
 }
 
 function getData() {
-  listTask = JSON.parse(localStorage.getItem('listTask'));
-  if(!listTask){
-    listTask = [];
+  tasks = JSON.parse(localStorage.getItem('listTasks'));
+  if(!tasks){
+    tasks = [];
   }
   drawTable();
 };
 
 function setData() {
-  localStorage.setItem('listTask', JSON.stringify(listTask));
+  localStorage.setItem('listTasks', JSON.stringify(listTasks));
   drawTable();
 }
 
 function doneTask() {
-  let task = listTask[this.dataset.id];
+  let task = listTasks[this.dataset.id];
   task.isDone = true;
   setData();
 }
 
 function increaseTask() {
-  let task = listTask[this.dataset.id];
+  let task = listTasks[this.dataset.id];
   let countPlan = task.countPlan;
   let countDone = task.countDone;
   if(countDone < countPlan){
@@ -42,12 +41,12 @@ function increaseTask() {
 
 function deleteTask() {
   console.log('delete');
-  let task = listTask[this.dataset.id];
-  remove(listTask, task);
+  let task = listTasks[this.dataset.id];
+  remove(listTasks, task);
 }
 
 function setEvent() {
-  if(listTask.length >0) {
+  if(listTasks.length >0) {
     let btnDone = document.querySelectorAll('.btn--done');
     let btnIncrease = document.querySelectorAll('.btn--increase');
     let btnDelete = document.querySelectorAll('.btn--delete');
@@ -62,7 +61,7 @@ function setEvent() {
 }
 
 function drawTable() {
-  tbody.innerHTML =  listTask.map((task, id) =>
+  tbody.innerHTML =  listTasks.map((task, id) =>
     `<tr>
       <td>${task.name}</td>
       <td>
@@ -92,8 +91,8 @@ function createTask() {
   }
   if(!task.name) {
     alert('Please enter!');
-  }else {
-    listTask.push(task);
+  } else {
+    listTasks.push(task);
     setData();
   }
 }
